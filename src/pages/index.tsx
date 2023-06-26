@@ -6,8 +6,6 @@ import { api } from "~/utils/api";
 export default function Home() {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
-  const user = useUser();
-
   return (
     <>
       <Head>
@@ -16,13 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center  bg-gradient-to-b from-[#2e026d] to-[#15162c]">
-        <nav className="flex text-white">
-          {user.isSignedIn ? (
-            <SignOutButton>Sign-out</SignOutButton>
-          ) : (
-            <SignInButton>Sign-in</SignInButton>
-          )}
-        </nav>
+        <nav className="flex text-white"></nav>
       </main>
     </>
   );

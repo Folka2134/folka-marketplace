@@ -4,7 +4,7 @@ import { createTRPCRouter, protectedProcedure, publicProcedure } from "~/server/
 export const listingsRouter = createTRPCRouter({
   create: protectedProcedure
   .input(
-    z.object({ name: z.string(), description: z.string(), price: z.string() })
+    z.object({ name: z.string(), description: z.string(), price: z.number() })
   )
   .mutation(async ({ input, ctx }) => {
     console.log(input);

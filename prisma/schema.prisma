@@ -24,5 +24,5 @@ model Listing {
     updatedAt   DateTime @updatedAt
     name        String
     description String
-    price       String
+    price       Int
 }

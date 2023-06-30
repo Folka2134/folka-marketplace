@@ -7,7 +7,7 @@ export function Navbar() {
   return (
     <nav className="absolute w-full border-gray-200 bg-white dark:bg-gray-900">
       <div className="mx-auto flex h-16 max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a href="https://flowbite.com/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="mr-3 h-8"
@@ -16,7 +16,7 @@ export function Navbar() {
           <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
             Marketplace
           </span>
-        </a>
+        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"

@@ -1,17 +1,12 @@
-import {
-  SignInButton,
-  SignOutButton,
-  useUser,
-  UserButton,
-} from "@clerk/nextjs";
+import { SignInButton, useUser, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 export function Navbar() {
   const user = useUser();
 
   return (
-    <nav className="border-gray-200 bg-white dark:bg-gray-900">
-      <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-end p-4">
+    <nav className="absolute w-full border-gray-200 bg-white dark:bg-gray-900">
+      <div className="mx-auto flex h-16 max-w-screen-xl flex-wrap items-center justify-end p-4">
         <button
           data-collapse-toggle="navbar-default"
           type="button"

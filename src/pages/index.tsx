@@ -16,11 +16,11 @@ function Card({ listing }: { listing: Listing }) {
       </a> */}
       <div className="flex h-60 min-h-max flex-col justify-between p-5 ">
         <div className="overflow-hidden text-ellipsis">
-          <a href="#">
+          <Link href={`/listings/${listing.id}`}>
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {listing.name}
             </h5>
-          </a>
+          </Link>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 ">
             {listing.description}
           </p>
@@ -28,8 +28,8 @@ function Card({ listing }: { listing: Listing }) {
             {listing.price}
           </p>
         </div>
-        <a
-          href="#"
+        <Link
+          href={`/listings/${listing.id}`}
           className="mt-6 inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           View
@@ -46,7 +46,7 @@ function Card({ listing }: { listing: Listing }) {
               clipRule="evenodd"
             ></path>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

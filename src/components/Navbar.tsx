@@ -6,7 +6,17 @@ export function Navbar() {
 
   return (
     <nav className="absolute w-full border-gray-200 bg-white dark:bg-gray-900">
-      <div className="mx-auto flex h-16 max-w-screen-xl flex-wrap items-center justify-end p-4">
+      <div className="mx-auto flex h-16 max-w-screen-xl flex-wrap items-center justify-between p-4">
+        <a href="https://flowbite.com/" className="flex items-center">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            className="mr-3 h-8"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+            Marketplace
+          </span>
+        </a>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -37,7 +47,7 @@ export function Navbar() {
                 className="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white dark:text-white md:bg-transparent md:p-0 md:text-blue-700 md:dark:text-blue-500"
                 aria-current="page"
               >
-                Home
+                Browse
               </Link>
             </li>
             <li>

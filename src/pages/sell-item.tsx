@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { api } from "~/utils/api";
 
@@ -10,6 +11,7 @@ type SellItemForm = {
 
 export default function SellItem() {
   const createListing = api.listings.create.useMutation();
+  const router = useRouter();
 
   const {
     register,
@@ -18,8 +20,9 @@ export default function SellItem() {
   } = useForm<SellItemForm>();
 
   const onSubmit = (formData: SellItemForm) => {
-    console.log(formData);
-    createListing.mutateAsync(formData);
+    createListing.mutateAsync(formData).then(() => {
+      router.push("/");
+    });
   };
 
   return (

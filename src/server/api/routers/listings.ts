@@ -28,6 +28,20 @@ export const listingsRouter = createTRPCRouter({
       });
       return message;
     }),
+  
+  getMessage: protectedProcedure
+    .query(async ({ input, ctx }) => {
+      const listing = await ctx.prisma.listing.findMany({
+        where : {
+          userId: ctx.auth.userId
+        },
+        include: {
+          message: true
+        }
+      });
+      return listing.flatMap((item) => item.message);
+    }),
+  
   create: protectedProcedure
   .input(
     z.object({ name: z.string(), description: z.string(), price: z.number() })

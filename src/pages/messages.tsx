@@ -6,6 +6,7 @@ import { api } from "~/utils/api";
 
 export default function Messages() {
   const messages = api.listings.getMessage.useQuery();
+  // console.log(messages.data?.length);
 
   return (
     <>
@@ -30,17 +31,25 @@ export default function Messages() {
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  {messages?.data?.map((message) => (
-                    <tr
-                      key={message.id}
-                      className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
-                    >
-                      <td className="px-6 py-4">{message.fromUserName}</td>
-                      <td className="px-6 py-4">{message.message}</td>
+                {messages?.data?.length ? (
+                  <tbody>
+                    {messages?.data?.map((message) => (
+                      <tr
+                        key={message.id}
+                        className="border-b bg-white dark:border-gray-700 dark:bg-gray-800"
+                      >
+                        <td className="px-6 py-4">{message.fromUserName}</td>
+                        <td className="px-6 py-4">{message.message}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                ) : (
+                  <tbody>
+                    <tr className="border-b bg-white dark:border-gray-700 dark:bg-gray-800">
+                      <td className="px-6 py-4">No new messages</td>
                     </tr>
-                  ))}
-                </tbody>
+                  </tbody>
+                )}
               </table>
             </div>
           </div>
